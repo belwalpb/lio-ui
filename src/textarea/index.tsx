@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { css } from 'glamor';
 import { getValidationError } from '@components/utils/validation-utils';
-export interface InputProps {
-    type?: string;
+
+export interface TextAreaProps {
     label?: string;
     width?: string;
     maxWidth?: string;
@@ -11,9 +11,11 @@ export interface InputProps {
     placeholder?: string;
     onChange: (value: string) => any;
     disabled?: boolean;
+    rows?: number;
+    cols?: number;
 }
 
-const InputLabel = (props: InputProps) => {
+const InputLabel = (props: TextAreaProps) => {
     if (!props.label) {
         return null;
     }
@@ -29,7 +31,7 @@ const InputLabel = (props: InputProps) => {
     return <label {...labelStyles}>{props.label}</label>;
 };
 
-const InputBox = (props: InputProps) => {
+const InputBox = (props: TextAreaProps) => {
     const [isTouched, setTouched] = useState(false);
     const [shouldShowError, setShouldShowError] = useState(false);
     const [value, setValue] = useState(props.value);
@@ -55,7 +57,6 @@ const InputBox = (props: InputProps) => {
 
     // Input Box Props
     let inputProps: any = {
-        type: props.type || 'text',
         value: props.value || '',
         placeholder: props.placeholder || '',
     };
@@ -76,10 +77,16 @@ const InputBox = (props: InputProps) => {
     if (props.disabled === true) {
         inputProps.disabled = true;
     }
+    if (props.rows) {
+        inputProps.rows = props.rows;
+    }
+    if (props.cols) {
+        inputProps.cols = props.cols;
+    }
 
     return (
         <React.Fragment>
-            <input {...inputStyles} {...inputProps}></input>
+            <textarea {...inputStyles} {...inputProps}></textarea>
             <br />
             <label {...validationErrorStyles}>
                 {isTouched && shouldShowError ? getValidationError(value, props.validate) : ''}
@@ -88,7 +95,7 @@ const InputBox = (props: InputProps) => {
     );
 };
 
-const Input = (props: InputProps) => {
+const Input = (props: TextAreaProps) => {
     let containerStyles = css({
         marginBottom: '24px',
         width: props.width || '100%',
