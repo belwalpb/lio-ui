@@ -24,6 +24,7 @@
         "paths": {
             "@components": ["./src/index"],
             "@components/*": ["./src/*"]
-        }
+        },
+        "types" : ["node"]
     }
 }
