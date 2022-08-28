@@ -1,0 +1,127 @@
+{
+    "name": "lio-ui",
+    "version": "1.0.0",
+    "description": "Lightweight React General Purpose Component Library",
+    "main": "lib/index.js",
+    "module": "lib-esm/index.js",
+    "typings": "lib/index.d.ts",
+    "scripts": {
+        "build": "scripts/build",
+        "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+        "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet --fix",
+        "pretty": "prettier --write src/**/*.{ts,tsx}"
+    },
+    "exports": {
+        ".": {
+            "node": "./lib/index.js",
+            "require": "./lib/index.js",
+            "default": "./lib-esm/index.js"
+        },
+        "./lib/*": {
+            "node": [
+                "./lib/*.js",
+                "./lib/*/index.js",
+                "./lib/**/*"
+            ],
+            "default": [
+                "./lib-esm/*.js",
+                "./lib-esm/*/index.js",
+                "./lib-esm/**/index.js"
+            ]
+        },
+        "./lib-esm/*": {
+            "node": [
+                "./lib/*.js",
+                "./lib/*/index.js",
+                "./lib/**/*"
+            ],
+            "default": [
+                "./lib-esm/*.js",
+                "./lib-esm/*/index.js",
+                "./lib-esm/**/index.js"
+            ]
+        }
+    },
+    "files": [
+        "lib",
+        "lib-esm"
+    ],
+    "author": "Priyanshu Belwal",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "glamor": "^2.20.40"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.18.10",
+        "@babel/core": "^7.18.13",
+        "@babel/eslint-parser": "^7.18.9",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+        "@babel/plugin-proposal-optional-chaining": "^7.18.9",
+        "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+        "@babel/preset-env": "^7.18.10",
+        "@babel/preset-react": "^7.18.6",
+        "@babel/preset-typescript": "^7.18.6",
+        "@rollup/plugin-alias": "^3.1.9",
+        "@rollup/plugin-babel": "^5.3.1",
+        "@rollup/plugin-commonjs": "^22.0.2",
+        "@rollup/plugin-node-resolve": "^13.3.0",
+        "@rollup/plugin-typescript": "^8.4.0",
+        "@types/react": "^18.0.17",
+        "@types/react-portal": "^4.0.4",
+        "@types/styled-components": "^5.1.26",
+        "@typescript-eslint/eslint-plugin": "^5.35.1",
+        "@typescript-eslint/parser": "^5.35.1",
+        "babel-loader": "^8.2.5",
+        "babel-plugin-add-react-displayname": "0.0.5",
+        "babel-plugin-macros": "3.1.0",
+        "babel-plugin-preval": "^5.1.0",
+        "babel-plugin-styled-components": "^2.0.7",
+        "babel-plugin-transform-replace-expressions": "0.2.0",
+        "babel-polyfill": "6.26.0",
+        "eslint": "^8.23.0",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-import-resolver-typescript": "^3.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsx-a11y": "^6.6.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.31.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-storybook": "^0.6.4",
+        "lint-staged": "^13.0.3",
+        "prettier": "^2.7.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "rollup": "^2.78.1",
+        "rollup-plugin-babel": "4.4.0",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-svg": "^2.0.0",
+        "rollup-plugin-terser": "7.0.2",
+        "rollup-plugin-visualizer": "^5.8.0",
+        "typescript": "^4.8.2"
+    },
+    "lint-staged": {
+        "src/**/*.{ts,tsx,css}": [
+            "prettier --write",
+            "eslint \"src/**/*.{ts,tsx}\" --quiet --fix"
+        ]
+    },
+    "directories": {
+        "lib": "lib",
+        "lib-esm": "lib-esm"
+    },
+    "keywords": [
+        "react component library",
+        "react ui",
+        "react",
+        "library"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/repo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/repo/issues"
+    },
+    "homepage": "https://github.com/repo#readme"
+}

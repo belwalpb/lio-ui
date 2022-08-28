@@ -1,0 +1,29 @@
+{
+    "include": ["src/**/*"],
+
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "preserve",
+        "strict": true,
+        "moduleResolution": "node",
+        "rootDirs": ["src"],
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "isolatedModules": true,
+        "declarationDir": "lib",
+        "outDir": "lib",
+        "declarationMap": true,
+        "baseUrl": "./",
+        "paths": {
+            "@components": ["./src/index"],
+            "@components/*": ["./src/*"]
+        }
+    }
+}
